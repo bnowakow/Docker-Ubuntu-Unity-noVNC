@@ -45,7 +45,7 @@ fi
 apt update
 apt install -y wget cpio libxss1 openjdk-8-jre-headless
 cd /etc/ssl/certs/java
-keytool -import -keystore cacerts -file /home/ubuntu/crashplan-chain-pem.crt -storepass changeit
+keytool -import -keystore cacerts -file /home/ubuntu/crashplan-chain-pem.crt -storepass changeit -noprompt
 cd /home/ubuntu
 #wget https://download.code42.com/installs/agent/7.2.0/1641/install/CrashPlanSmb_7.2.0_1525200006720_1641_Linux.tgz
 wget https://download.code42.com/installs/agent/7.4.0/566/install/CrashPlanSmb_7.4.0_1525200006740_566_Linux.tgz
