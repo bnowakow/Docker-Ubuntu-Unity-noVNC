@@ -59,7 +59,7 @@ COPY xsession $HOME/.xsession
 # Copy startup script
 COPY startup.sh $HOME
 # Copy crashplan cert with chain
-COPY crashplan-chain-pem.crt /etc/ssl/certs/java
+COPY crashplan-chain-pem.crt $HOME
 
 EXPOSE 6080 5901 4040
 CMD ["/bin/bash", "/home/ubuntu/startup.sh"]
