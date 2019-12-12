@@ -4,6 +4,7 @@ MAINTAINER Jacob <chenjr0719@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER ubuntu
 ENV HOME /home/$USER
+ENV SUDO yes
 
 # Create new user for vnc login.
 RUN adduser $USER --disabled-password
@@ -57,6 +58,8 @@ COPY xsession $HOME/.xsession
 
 # Copy startup script
 COPY startup.sh $HOME
+# Copy crashplan cert with chain
+COPY crashplan-chain-pem.crt /etc/ssl/certs/java
 
 EXPOSE 6080 5901 4040
 CMD ["/bin/bash", "/home/ubuntu/startup.sh"]
