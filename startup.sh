@@ -45,13 +45,15 @@ fi
 cd /home/ubuntu
 apt update
 apt install -y wget cpio openjdk-8-jre-headless libxss1
-wget https://download.code42.com/installs/agent/7.2.0/1641/install/CrashPlanSmb_7.2.0_1525200006720_1641_Linux.tgz
+#wget https://download.code42.com/installs/agent/7.2.0/1641/install/CrashPlanSmb_7.2.0_1525200006720_1641_Linux.tgz
 wget https://download.code42.com/installs/agent/7.4.0/566/install/CrashPlanSmb_7.4.0_1525200006740_566_Linux.tgz
 echo -e "dupa\ndupa" | passwd
 echo -e "dupa\ndupa" | passwd ubuntu
 echo 'JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/bin/"' >> /etc/environment
-
-
+tar zxf CrashPlanSmb_7.4.0_1525200006740_566_Linux.tgz
+cd crashplan-install
+echo -e "\n\n\n\n\n\n\n\n\n\n\n\n" | ./install.sh
+cd /home/ubuntu
 
 /usr/bin/supervisord -n
 
